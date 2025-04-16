@@ -1,0 +1,39 @@
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; 
+    padding-left:20px;
+}
+
+.about-us-slogan{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #000050;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+}
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    .about-us {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-us {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1399px){
+    .about-us {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (min-width: 1410px) {
+    .about-us {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}

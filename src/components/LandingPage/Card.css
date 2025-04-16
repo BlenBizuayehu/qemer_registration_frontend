@@ -1,0 +1,296 @@
+.card {
+    width: 320px;
+    height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+.card-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 33, 71, 0.8);
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* ✅ Show overlay when card is hovered */
+.card:hover .card-overlay {
+    opacity: 0.8;
+}
+
+/* ✅ Add hover scaling effect */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.card-img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* ✅ Center the title */
+.card-title-container {
+    position: absolute;
+    top: 50%;
+    white-space: nowrap;
+    left: 50%;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 1);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: aliceblue;
+    transition: transform 0.4s ease-in-out, left 0.4s ease-in-out;     z-index: 2; /* Ensure text stays above overlay */
+}
+
+/* ✅ Position the description OFF-SCREEN (Right Side) */
+.card-description {
+    position: absolute;
+    top: 30%;
+    left: 120%;  /* Start completely outside the card */
+    color: white;
+    font-size: 15px;
+    transition: left 0.4s ease-in-out;
+    z-index: 2;
+    white-space: wrap;
+    width: 80%;
+    max-width: 250px; /* Keeps the text from dynamically wrapping */
+    height: auto; /* Allow natural height */
+    opacity: 1; /* Ensure it's visible after sliding in */
+    padding-left: 15px; /* Space between text and the line */
+    border-left: 3px solid transparent; /* Initially hidden */
+}
+
+
+/* ✅ Move title UP when hovered */
+.card:hover .card-title-container {
+    transform: translate(-50%, -450%);
+
+}
+
+/* ✅ Slide description IN from the right */
+.card:hover .card-description {
+    left: 40%;
+    transform: translateX(-40%);
+    border-left: 5px solid white;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    position: relative;
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .card {
+        width: 90%; /* Adjust width to fit smaller screens */
+        height: 380px; /* Reduce height */
+    }
+
+    .card-title-container {
+        font-size: 22px; /* Smaller title */
+        transform: translate(-50%, -50%);
+    }
+
+    .card:hover .card-title-container {
+        transform: translate(-50%, -400%);
+    }
+
+    .card-description {
+        font-size: 13px; /* Smaller text */
+        left: 110%; /* Start further off-screen */
+        width: 90%;
+        max-width: 200px; /* Prevent large descriptions */
+    }
+
+    .card:hover .card-description {
+        left: 35%; /* Slide in closer */
+    }
+
+}
+
+/* Medium Screens (480px - 680px) - Make cards smaller */
+@media (min-width: 480px) and (max-width: 680px) {
+    .card {
+        width: 90%; /* Adjust width to fit medium screens */
+        height: 400px;
+    }
+
+    .card-title-container {
+        font-size: 24px;
+    }
+
+    .card:hover .card-title-container {
+        transform: translate(-50%, -320%);
+    }
+
+    .card-description {
+        font-size: 14px;
+        left: 115%;
+    }
+
+    .card:hover .card-description {
+        left: 38%;
+    }
+
+
+}
+
+/* Tablets (Portrait and Small Laptops) */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Adjust width for tablets */
+        height: 420px;
+    }
+
+    .card-title-container {
+        font-size: 25px;
+    }
+
+    .card:hover .card-title-container {
+        transform: translate(-60%, -450%);
+    }
+
+    .card-description {
+        font-size: 15px;
+        left: 115%;
+        width: 80%;
+        max-width: 220px;
+    }
+
+    .card:hover .card-description {
+        left: 38%;
+    }
+
+    .corner {
+        width: 25px;
+        height: 25px;
+        border-width: 3px;
+    }
+}
+
+/* New: Smaller Cards for 850px - 999px */
+@media (min-width: 850px) and (max-width: 999px) {
+    .card {
+        width: 90%; /* Adjust width to fit medium screens */
+        height: 430px;
+    }
+
+    .card-title-container {
+        font-size: 28px;
+    }
+
+    .card:hover .card-title-container {
+        transform: translate(-50%, -400%);
+    }
+
+    .card-description {
+        font-size: 16px;
+        left: 118%;
+        width: 80%;
+        max-width: 240px;
+    }
+
+    .card:hover .card-description {
+        left: 39%;
+    }
+
+    .corner {
+        width: 27px;
+        height: 27px;
+        border-width: 4px;
+    }
+}
+
+/* Medium to Large Screens (1000px - 1180px) */
+@media (min-width: 1000px) and (max-width: 1180px) {
+    .card {
+        width: 320px; /* Slightly smaller than default */
+        height: 440px;
+    }
+
+    .card-title-container {
+        font-size: 29px;
+    }
+
+    .card:hover .card-title-container {
+        transform: translate(-50%, -420%);
+    }
+
+    .card-description {
+        font-size: 17px;
+        left: 118%;
+        width: 80%;
+        max-width: 245px;
+    }
+
+    .card:hover .card-description {
+        left: 39%;
+    }
+
+    .corner {
+        width: 28px;
+        height: 28px;
+        border-width: 4px;
+    }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1400px) {
+    .card {
+        width: 320px; /* Fixed size of 320px for large screens */
+        height: 450px;
+    }
+
+    .card-title-container {
+        font-size: 30px;
+    }
+
+    .card:hover .card-title-container {
+        transform: translate(-50%, -450%);
+    }
+
+    .card-description {
+        font-size: 17px;
+        left: 120%;
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .card:hover .card-description {
+        left: 40%;
+    }
+
+    .corner {
+        width: 30px;
+        height: 30px;
+        border-width: 4px;
+    }
+}

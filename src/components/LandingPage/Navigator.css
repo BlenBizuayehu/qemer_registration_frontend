@@ -1,0 +1,41 @@
+.menu-title {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-title a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.menu-title a::before,
+.menu-title a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: aliceblue;
+    width: 0;
+    bottom: 0;
+    transition: width 0.4s ease;
+}
+
+.menu-title a::before {
+    left: 50%;
+}
+
+.menu-title a::after {
+    right: 50%;
+}
+
+.menu-title a:hover::before,
+.menu-title a:hover::after {
+    width: 40%;
+}
+
+@media (max-width: 640px) {
+    .navigator {
+        display: none;
+       }
+    }

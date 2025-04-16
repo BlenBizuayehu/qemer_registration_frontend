@@ -1,0 +1,61 @@
+.explore {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100vw;
+    transform: translateY(30px);
+    padding:10px;
+    margin-bottom: 80px;
+    margin-top: -90px;
+    
+}
+
+.explore.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* CourseCard animation */
+.explore-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.explore.animate .explore-item {
+    opacity: 1;
+}
+
+/* Animation definition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 1400px) {
+    .explore {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .explore {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        padding-top:30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .explore {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
+    }
+}
+
+

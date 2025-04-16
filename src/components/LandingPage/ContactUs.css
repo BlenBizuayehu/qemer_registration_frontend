@@ -1,0 +1,124 @@
+.image-container3 {
+position: relative;
+width: 100%;
+height: 350px;
+z-index: 1;
+bottom: -800px;
+overflow: hidden;
+}
+.image-container3 img {
+display: block;
+position: relative;  /* Keeps it aligned properly */
+left: 0;
+width: 100vw; /* Full width of the screen */
+height: 110%; /* Full height of the container */
+object-fit: cover; /* Ensure the image covers the container */
+margin-bottom: -730px;
+}
+
+.contact-h2{
+color:white;
+position: relative;
+z-index: 5;
+bottom:-470px;
+font-size: 35px;
+transform: translate(0%, 50%); /* Center the items */
+text-align: center;
+max-width: 100%;
+margin: 0 auto;
+}
+
+.wave3 {
+position: absolute;
+bottom: 270px; /* Moves the wave closer to the bottom */
+left: 0;
+width: 100vw;
+height: 140px; /* Adjust height of the wave */
+z-index: 2;
+}
+
+.wave3 svg {
+width: 100vw; /* Full width of the viewport */
+height: 100%; /* Adjust height to fit the container */
+position: absolute;
+bottom: 0; /* Align wave at the bottom */
+left: 0;
+transform: translateY(5px); /* Small vertical adjustment */
+}
+
+.contact-info-overlay {
+position: absolute;
+bottom: 0px;
+left: 0px;
+background-color: rgba(109, 134, 165, 0.7);
+padding-left: 50%;
+padding-right: 51%;
+margin-bottom: -90px;
+z-index: 1;
+height: 450px;
+}
+
+.copyright{
+position: relative;
+bottom:-860px; /* Adjust based on where you want to position them */;
+left: 40%;
+transform: translate(-50%, -50%); /* Center the items */
+z-index: 4; /* Make sure it's above the image */
+color:black;
+width: 80%;
+max-width: 100%;
+margin: 0 auto;
+text-align: center;
+}
+
+.contact-items-container {
+  position: relative;
+  bottom:200px; /* Adjust based on where you want to position them */;
+  left: 40%;
+  transform: translate(-50%, -50%); /* Center the items */
+  z-index: 3; /* Make sure it's above the image */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 80%;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  }
+
+@media screen and (max-width: 1000px) {
+  .contact-items-container {
+    display: grid;
+    left: 50%;
+    gap:0px;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    justify-content: center;
+    align-items: center;
+  }
+  .copyright{
+    bottom:-600px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .contact-items-container {
+    display: grid;
+    left: 60%;
+    gap:0px;
+    grid-template-columns: repeat(1, 1fr); /* Two equal columns */
+    justify-content: center;
+    align-items: center;
+  }
+  .image-container3{
+    height:600px;
+    bottom:-750px;
+  }
+  .wave3{
+    bottom:200px;
+  }
+  .contact-h2{
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+}

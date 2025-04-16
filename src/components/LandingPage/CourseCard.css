@@ -1,0 +1,108 @@
+/* Apply styles to elements with both classes */
+.course-card.explore-item {
+    height: 300px;
+    color:black;
+    text-align: center;
+    padding: 30px 20px;
+    width: 320px;
+    margin:0 auto;
+    height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+    border-color: #002147;
+    border:solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; 
+}
+.course-card.explore-item:hover{
+    transform: scale(1.02);
+    color:white;
+    background-color: #002147;
+    border-color: white;
+    box-shadow: 0 1px 8px rgba(202, 200, 200, 0.15);
+}
+.card-title{
+    font-size: 25px;
+    margin-bottom: 20px
+}
+.card-desc{
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+.card-price{
+    font-size: 35px;
+    color:green;
+}
+.card-schedule{
+    font-size: 25px;
+}
+.btn-get-started{
+    padding:15px 30px;
+
+    background-color: #002147;
+    color:white;
+    border-radius:6px;
+    border-color: white;
+    font-size:15px;
+}
+/* Default styling for larger screens */
+.course-card.explore-item {
+    height: 450px;
+    width: 320px;
+    padding: 30px 20px;
+}
+
+/* Medium screens: 2 or 3 columns */
+@media (max-width: 1200px) {
+    .course-card.explore-item {
+        width: 280px; /* Smaller card width */
+        height: 400px;
+    }
+}
+
+@media (max-width: 900px) {
+    .course-card.explore-item {
+        width: 320px; /* Adjust further for tablets */
+        height: 380px;
+    }
+}
+
+@media (max-width: 740px) and (min-width:600px){
+    .course-card.explore-item {
+        width: 280px; /* Adjust further for tablets */
+        height: 380px;
+    }
+}
+
+/* Mobile screens: 1 column */
+@media (max-width: 600px) {
+    .course-card.explore-item {
+        width: 70%; /* Full width for mobile */
+        height: 300px;
+        padding: 20px; /* Adjust padding for small screens */
+    }
+
+    /* Adjust card text sizes for better readability on mobile */
+    .card-title {
+        font-size: 20px;
+    }
+    .card-desc {
+        font-size: 16px;
+    }
+    .card-price {
+        font-size: 30px;
+    }
+    .card-schedule {
+        font-size: 20px;
+    }
+    .btn-get-started {
+        font-size: 14px;
+        padding: 12px 25px;
+    }
+}
+
+
+

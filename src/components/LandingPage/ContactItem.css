@@ -1,0 +1,28 @@
+.contact-item{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3;
+    width: auto; /* Allow each item to auto-size based on content */
+    max-width: 200px; 
+    height:60px;
+}
+.contact-item img{
+    height:30px;
+    max-width:30px;
+    bottom:-740px;
+    margin-right: 10px;
+}
+.contact-text p {
+    color: #000; /* Ensure text is visible */
+    position: relative;
+    bottom:-750px;
+    color:aliceblue
+}
+@media screen and (max-width: 580px) {
+    .contact-item{
+height:40px;
+        gap: 10px;}
+  }
+  

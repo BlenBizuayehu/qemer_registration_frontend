@@ -1,0 +1,190 @@
+/* General Header Styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    color: aliceblue;
+    background: transparent;
+    transition: background-color 0.3s ease-in;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.header.scrolled {
+    background-color: #002147;
+}
+
+.logo-container img {
+    height: 50px;
+    width: 140px;
+    margin-left: 10px;
+}
+
+.logo-container span {
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 15px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navigators {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.visit-btn {
+    padding: 12px 35px;
+    background-color: white;
+    color: hsl(212, 100%, 14%);
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.visit-btn:hover {
+    color: white;
+    background-color: transparent;
+    border: solid white 2px;
+    cursor: pointer;
+}
+
+@media(min-width:1240px){
+    .links{
+        display: flex;
+        justify-content: space-between;
+        gap:30px;
+        font-size: 17px;
+    }
+    .navigators {
+        width:50%;
+        justify-content: space-around;
+    }
+    .visit-btn {
+        margin-right: 0px;
+    }
+    .visit-btn:hover {
+        margin-left: -3px;
+    }
+    
+    }
+
+/* Responsive Design */
+@media(min-width:1115px) and (max-width:1160px){
+.navigators{
+    width:60%;
+}
+.visit-btn {
+    margin-right: 0px;
+}
+
+}
+@media(min-width:1025px)and (max-width:1115px){
+    .visit-btn {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        height: 70px;
+        padding: 0 15px;
+    }
+    .logo-container span {
+        font-size: 26px;
+    }
+    .navigators {
+        width: 60%;
+    }
+    .visit-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .header {
+        height: 70px;
+        padding: 0 15px;
+    }
+    .logo-container span {
+        margin-top: -30px;
+        font-size: 25px;
+    }
+    .navigators {
+        width: 73%;
+        font-size: 14px;
+    }
+    .visit-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+        margin-left: 0px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 70px;
+        overflow: hidden;
+    }
+    .navigators{
+        position: absolute;
+        margin-left: 270px;
+    }
+    .links {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        background-color: #002147;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .visit-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 550px){
+
+    .navigators{
+        position: absolute;
+        margin-left: 220px;
+    }
+    .links {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        background-color: #002147;
+        text-align: center;
+        padding: 20px 0;
+    }
+}
+@media (max-width: 400px) {
+    .logo-container img {
+        height: 45px;
+        width: 80px;
+    }
+    .logo-container span {
+        font-size: 20px;
+    }
+    .visit-btn {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+}

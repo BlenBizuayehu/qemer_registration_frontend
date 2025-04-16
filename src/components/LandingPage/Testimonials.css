@@ -1,0 +1,130 @@
+/* Container for testimonials section */
+.testimonial-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 40px;
+    position: relative;
+    max-width: 100%;
+    height: 450px;
+    z-index: 5;
+    margin-bottom: -870px;
+}
+
+
+/* Style for text within testimonial items */
+.testimonial-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+/* Left section with header */
+.testimonial-left {
+    background-color: #1d2a3a;
+    color: white;
+    padding: 10px;
+    flex-basis: 45%;
+}
+
+.testimonial-left h2 {
+    font-size: 50px;
+    font-weight: bold;
+    color:white;
+
+}
+
+/* Right section where testimonials are displayed */
+.testimonial-right {
+    padding: 30px 10px;
+    flex-basis: 50%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Container for testimonials */
+.testimonial-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Base testimonial item styling */
+.testimonial-item {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Show the testimonial in the center */
+.testimonial-item.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Slide-in animation (from right) */
+.testimonial-item.slide-in {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* Slide-out animation (to left) */
+.testimonial-item.slide-out {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.testimonial-item {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Show the testimonial in the center */
+.testimonial-item.show {
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
+/* Slide-out animation (to left) */
+.testimonial-item.slide-out {
+    transform: translateX(-150%);
+    opacity: 0;
+}
+
+@media(max-width:768px) {
+    .testimonial-left h2 {
+        font-size: 40px;
+    }
+}
+@media(max-width:600px){
+    .testimonial-section{
+        justify-content: center;
+        margin-top: -50px;
+        margin-bottom: -800px;
+    }
+    .testimonial-left{
+        opacity: 0;
+    }
+    .testimonial-right{
+        position: absolute;
+        max-width: 400px;
+    }
+
+}
