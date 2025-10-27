@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Container from "../../UI/Container";
+import Container from "../UI/Container";
 import "./CourseItem.css";
 import CourseList from "./CourseList";
 
@@ -18,6 +18,7 @@ function CourseItem({  courseId, title, description, duration, imageSource, cour
       const courseDetails = courses.find((course) => course._id === courseId);
       if (courseDetails) {
         setDetails(courseDetails.schedule);
+        console.log(courseDetails.schedule); 
       }
     }
   }

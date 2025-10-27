@@ -8,4 +8,4 @@ function Navigator(props){
         </span>
     )
 }
-export default Navigator
+export default Navigator;

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Container from "../../UI/Container";
+import Container from "../UI/Container";
 import "./CourseCard.css";
 
 function CourseCard(props) {
@@ -14,6 +14,7 @@ function CourseCard(props) {
         navigate("/register", { state: { 
             courseTitle: props.title,
             day: props.description,
+            time:props.time,
             mode: props.schedule,
             price: props.price
         } });
@@ -30,6 +31,9 @@ function CourseCard(props) {
             <div className="card-schedule">
                 {props.schedule}
             </div>
+            <div className="card-time">
+    {props.time ? props.time : "Time not available"}
+</div>
             <div className="card-price">
                 {props.price}
             </div>

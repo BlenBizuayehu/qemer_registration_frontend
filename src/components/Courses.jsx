@@ -13,12 +13,13 @@ function Courses() {
 
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:5003/api/courses');
+const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/courses`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         setCourses(data);
+  console.log(data.schedule);
         setError(null);
       } catch (error) {
         console.error('Fetch Error:', error);
@@ -43,7 +44,7 @@ function Courses() {
             title={item.courseName}
             description={item.courseDesc}
             duration={item.duration}
-            imageSource={`http://localhost:5003/${item.courseImg}`}
+            imageSource={`${import.meta.env.VITE_API_BASE_URL}/${item.courseImg}`}
             courses={courses}
             alternate={index % 2 === 0} // Pass alternate prop
           />

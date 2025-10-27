@@ -3,3 +3,7 @@
     padding: 0;
     box-sizing: border-box; /* Ensure padding and border are inside the element's total width/height */
   }
+  /* Add this to your main CSS file (e.g., index.css or App.css) */
+html {
+  scroll-behavior: smooth;
+}

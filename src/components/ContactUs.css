@@ -60,15 +60,16 @@ height: 450px;
 
 .copyright{
 position: relative;
-bottom:-860px; /* Adjust based on where you want to position them */;
-left: 40%;
-transform: translate(-50%, -50%); /* Center the items */
+bottom:-800px; /* Adjust based on where you want to position them */;
 z-index: 4; /* Make sure it's above the image */
 color:black;
-width: 80%;
+width: 100%;
 max-width: 100%;
 margin: 0 auto;
 text-align: center;
+padding:20px;
+color:white;
+background: linear-gradient(90deg, #2e3a5f, #3a3144);
 }
 
 .contact-items-container {
@@ -86,6 +87,10 @@ text-align: center;
   margin: 0 auto;
   }
 
+  .dot{
+    margin:0px 100px;
+  }
+
 @media screen and (max-width: 1000px) {
   .contact-items-container {
     display: grid;
@@ -95,9 +100,7 @@ text-align: center;
     justify-content: center;
     align-items: center;
   }
-  .copyright{
-    bottom:-600px;
-  }
+
 }
 @media screen and (max-width: 580px) {
   .contact-items-container {

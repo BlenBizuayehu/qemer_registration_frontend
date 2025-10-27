@@ -47,7 +47,7 @@ function ContactUs() {
           })}
         </div>
         
-        <div className="wave3">
+        <div className="wave3"   id="contact">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
@@ -59,10 +59,16 @@ function ContactUs() {
               d="M0,150 C780,50 760,550 1440,100 L1440,0 L0,0 Z"             ></path>
           </svg>
         </div>
-        <p className="copyright">
-        © All Rights Reserved  Blen Bizuayehu      2025
-        </p>
+        
       </div>
+      <div className="copyright">
+      <span>Blen Bizuayehu     </span>
+      <span className="dot">•</span>
+      <span >© All Rights Reserved  </span>
+        <span className="dot">•</span>
+        <span> 2025 </span>
+      </div>
+      
     </div>
   );
 }

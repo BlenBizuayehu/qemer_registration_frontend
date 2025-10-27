@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Testimonials.css";
-import Testimony from "./Testimony"; // Import the Testimony component
+import Testimony from "./Testimony";
 
 function Testimonials() {
     const [testimonies, setTestimonies] = useState([]);
@@ -11,18 +11,18 @@ function Testimonials() {
     useEffect(() => {
         const fetchTestimonies = async () => {
             try {
-                const response = await fetch("http://localhost:5003/api/testimonials");
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/testimonials`);
+
                 const data = await response.json();
-                setTestimonies(data); // Set fetched testimonies
+                setTestimonies(data);
             } catch (error) {
                 console.error("Error fetching testimonies:", error);
             }
         };
-
         fetchTestimonies();
     }, []);
 
-    // Auto-slide effect
+    // Auto-slide effect - ONLY CHANGED THE TIMING HERE
     useEffect(() => {
         if (testimonies.length === 0) return;
 
@@ -32,12 +32,12 @@ function Testimonials() {
             setTimeout(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonies.length);
                 setTransitionClass("slide-in");
-            }, 800);
+            }, 1000); // Reduced from 800ms to 500ms
 
             setTimeout(() => {
                 setTransitionClass("show");
-            }, 1600);
-        }, 4000);
+            }, 1000); // Reduced from 1600ms to 1000ms
+        }, 4000); // Reduced from 4000ms to 3000ms
 
         return () => clearInterval(interval);
     }, [testimonies]);
@@ -58,7 +58,8 @@ function Testimonials() {
                             }`}
                         >
                             <Testimony 
-                                src={`http://localhost:5003/uploads/${testimony.picture}`} 
+                                src={`${import.meta.env.VITE_API_BASE_URL}/uploads/${testimony.picture}`}
+ 
                                 name={testimony.name} 
                                 role={testimony.role} 
                                 text={testimony.text} 

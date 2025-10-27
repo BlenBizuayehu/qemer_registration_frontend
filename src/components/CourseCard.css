@@ -17,12 +17,17 @@
     justify-content: space-between;
     overflow: hidden; 
 }
-.course-card.explore-item:hover{
+.course-card.explore-item:hover {
     transform: scale(1.02);
     color:white;
     background-color: #002147;
     border-color: white;
     box-shadow: 0 1px 8px rgba(202, 200, 200, 0.15);
+}
+
+.course-card.explore-item:hover .card-title h2{
+    color:white;
+
 }
 .card-title{
     font-size: 25px;

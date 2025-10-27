@@ -23,6 +23,7 @@
 .course-img-container {
     position: relative; /* Ensure .corner elements are positioned relative to this */
     display: inline-block; /* Prevent unwanted stretching */
+    overflow: hidden;
 }
 /* For the image */
 .course-image {
@@ -31,6 +32,8 @@
     object-fit: cover; /* To maintain aspect ratio */
     display:block;
 }
+
+
 
 /* Corner Decorations */
 .corner {
@@ -138,6 +141,8 @@
         max-width:fit-content;
     }
 
+   
+
     .course-item:hover {
         transform: scale(1.01);}
 
@@ -189,6 +194,14 @@
         max-width:fit-content;
     }
 
+    .course-text h1{
+        white-space: wrap;
+    }
+
+    .course-text p{
+        margin-top: -30px;
+    }
+
     .course-item:hover {
         transform: scale(1.01);}
 
@@ -210,6 +223,7 @@
 
     .btn-explore{
         font-size: 14px;
+
     }
 
     .course-text {
@@ -224,6 +238,7 @@
     .corner{
         opacity:0;
     }
+    
 }
 
 /* For screens between 1025px and 1225px (medium desktop size) */

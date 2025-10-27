@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Register.css";
 
@@ -11,6 +11,7 @@ function Register() {
     const [Phone, setPhone] = useState("");
     const [Course] = useState(courseFromPrevPage.courseTitle || "");
     const [Day] = useState(courseFromPrevPage.day || "");
+    const [Time] = useState(courseFromPrevPage.time || "");
     const [Mode] = useState(courseFromPrevPage.mode || "");
     const [Price] = useState(courseFromPrevPage.price || "");
     const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,7 @@ function Register() {
     const inputRefs = {
         course: useRef(null),
         days: useRef(null),
+        time:useRef(null),
         mode: useRef(null),
         price: useRef(null),
     };
@@ -30,7 +32,7 @@ function Register() {
         e.preventDefault();
         
         try {
-          const response = await fetch('http://localhost:5003/api/requests', {
+const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/requests`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -40,6 +42,7 @@ function Register() {
               Phone,
               Course,
               Day,
+              Time,
               Mode,
               Price
             }),
@@ -87,7 +90,7 @@ function Register() {
         ) : null;
     };
 
-    // Close warning box if clicked outside
+    // Close warning box if cliicked outside
     const handleClickOutside = (event) => {
         if (
             warningBoxRef.current && !warningBoxRef.current.contains(event.target) && 
@@ -141,18 +144,19 @@ function Register() {
                 <label htmlFor="phone">Enter Your Phone Number:</label>
                 <input type="text" id="phone" name="phone" required value={Phone} onChange={(e) => setPhone(e.target.value)} />
 
-                {["course", "days", "mode", "price"].map((field) => (
+                {["course", "days", "time", "mode", "price"].map((field) => (
                     <div key={field} className="readonly-container">
                         <label htmlFor={field}>
                             {field === "course" ? "Course to study:" :
                              field === "days" ? "Chosen schedule:" :
+                             field === "time" ? "Chosen time:" : 
                              field === "mode" ? "Mode of study:" : "Price:"}
                         </label>
                         <input
                             type="text"
                             id={field}
                             name={field}
-                            value={field === "course" ? Course : field === "days" ? Day : field === "mode" ? Mode : Price}
+                            value={field === "course" ? Course : field === "days" ? Day : field==="time" ? Time : field === "mode" ? Mode : Price}
                             readOnly
                             onClick={() => handleFieldClick(field)}  // Handle field click
                             ref={inputRefs[field]}  // Attach refs
@@ -191,6 +195,13 @@ function Register() {
                     </svg>
                 </div>
             </div>
+            <div className="copyright">
+      <span>Blen Bizuayehu     </span>
+      <span className="dot">•</span>
+      <span >© All Rights Reserved  </span>
+        <span className="dot">•</span>
+        <span> 2025 </span>
+      </div>
         </div>
     );
 }

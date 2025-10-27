@@ -1,4 +1,4 @@
-import Container from "../../UI/Container"
+import Container from "../UI/Container"
 import "./Card.css"
 function Card(props){
 

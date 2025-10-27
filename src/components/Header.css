@@ -20,9 +20,9 @@
 }
 
 .logo-container img {
-    height: 50px;
-    width: 140px;
-    margin-left: 10px;
+    height: 55px;
+    width: 160px;
+    margin-left: 20px;
 }
 
 .logo-container span {
@@ -50,6 +50,7 @@
     transition: background-color 0.5s ease;
     border-radius: 3px;
     white-space: nowrap;
+
 }
 
 .visit-btn:hover {
@@ -57,6 +58,10 @@
     background-color: transparent;
     border: solid white 2px;
     cursor: pointer;
+    padding: 9px 23.5px;
+
+        padding: 11px 33.5px;
+    
 }
 
 @media(min-width:1240px){
@@ -74,11 +79,18 @@
         margin-right: 0px;
     }
     .visit-btn:hover {
-        margin-left: -3px;
+        padding: 11px 33.5px;
     }
+    
     
     }
 
+    @media(min-width:1024px) and (max-width:1240){
+        .visit-btn:hover {
+            padding: 11px 33.5px;
+        }
+        
+    }
 /* Responsive Design */
 @media(min-width:1115px) and (max-width:1160px){
 .navigators{
@@ -88,11 +100,13 @@
     margin-right: 0px;
 }
 
+
 }
 @media(min-width:1025px)and (max-width:1115px){
     .visit-btn {
         margin-right: 30px;
     }
+    
 }
 
 @media (max-width: 1024px) {
@@ -110,17 +124,25 @@
         padding: 10px 25px;
         font-size: 14px;
     }
+    .visit-btn:hover {
+        padding: 9px 23.5px;
+    }
 
 }
 
 @media (max-width: 800px) {
     .header {
-        height: 70px;
+        height: 60px;
         padding: 0 15px;
     }
     .logo-container span {
         margin-top: -30px;
         font-size: 25px;
+    }
+    .logo-container img{
+        width:150px;
+        height:45px;
+margin-left: 10px;
     }
     .navigators {
         width: 73%;
@@ -131,6 +153,9 @@
         font-size: 14px;
         margin-left: 0px;
     }
+    .visit-btn:hover {
+        padding: 9px 23.5px;
+    }
 
 }
 
@@ -138,8 +163,13 @@
     .header {
         flex-direction: row;
         justify-content: space-between;
-        height: 70px;
+        height: 60px;
         overflow: hidden;
+    }
+    .logo-container img{
+        width:150px;
+        height:45px;
+        margin-left: 10px;
     }
     .navigators{
         position: absolute;
@@ -158,12 +188,20 @@
         padding: 10px 25px;
         font-size: 14px;
     }
+    .visit-btn:hover {
+        padding: 9px 23.5px;
+    }
 }
 @media (max-width: 550px){
 
     .navigators{
         position: absolute;
         margin-left: 220px;
+    }
+    .logo-container img{
+        width:150px;
+        height:45px;
+        margin-left: 10px;
     }
     .links {
         display: none;
@@ -173,6 +211,9 @@
         background-color: #002147;
         text-align: center;
         padding: 20px 0;
+    }
+    .header {
+        height: 60px;
     }
 }
 @media (max-width: 400px) {
@@ -186,5 +227,16 @@
     .visit-btn {
         font-size: 12px;
         padding: 6px 15px;
+    }
+    .visit-btn:hover {
+        padding: 5px 13.5px;
+    }
+    .header {
+        height: 60px;
+    }
+    .logo-container img{
+        width:150px;
+        height:45px;
+        margin-left: 10px;
     }
 }
